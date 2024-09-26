@@ -8,18 +8,17 @@ const Update = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // Make handleSubmit async to use await with axios
   const handleSubmit = async () => {
     if (!content) {
       setError("Offer content is required.");
-      setSuccess(""); // Clear success message
+      setSuccess(""); 
     } else {
       setError("");
       try {
-        // Define the data you are sending
+   
         const updatedData = { OfferContent: content };
 
-        // Await the axios PUT request
+
         const response = await axios.put(
           "http://localhost:1234/user/fetch-update-offer/66ee8fa4f6e9790366a61fed",
           updatedData
@@ -28,12 +27,12 @@ const Update = () => {
         console.log("Successfully updated offer", response.data);
         setSuccess("Offer updated successfully!");
         toast.success("Text Updated");
-        setTimeout(() => navigate("/dash-board/page-updates"), 3000); // Show success message
-        setContent(""); // Clear the input field after successful update
+        setTimeout(() => navigate("/dash-board/page-updates"), 3000); 
+        setContent(""); 
       } catch (error) {
         console.error("Error updating offer:", error);
         setError("Error updating offer.");
-        setSuccess(""); // Clear success message
+        setSuccess("");
       }
     }
   };
