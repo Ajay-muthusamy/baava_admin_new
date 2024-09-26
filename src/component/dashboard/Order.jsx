@@ -20,7 +20,7 @@ const Order = () => {
 
   const downloadPDF = async (orderId) => {
     try {
-      const response = await axios.get(`http://localhost:1234/pdf/generate-pdf/${orderId}`, {
+      const response = await axios.get(`https://baava-backend-new-1.onrender.com/pdf/generate-pdf/${orderId}`, {
         responseType: 'blob',
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));

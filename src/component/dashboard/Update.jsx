@@ -20,7 +20,7 @@ const Update = () => {
 
 
         const response = await axios.put(
-          "http://localhost:1234/user/fetch-update-offer/66ee8fa4f6e9790366a61fed",
+          "https://baava-backend-new-1.onrender.com/user/fetch-update-offer/66ee8fa4f6e9790366a61fed",
           updatedData
         );
 
