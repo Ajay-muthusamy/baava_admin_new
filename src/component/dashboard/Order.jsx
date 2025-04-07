@@ -11,7 +11,7 @@ const Order = () => {
         const response = await axios.get('https://baava-backend-new-1.onrender.com/user/order-details');
         setOrders(response.data);
       } catch (error) {
-        console.log('Error fetching data from the server:', error);
+        console.log('Error in fetching data from the server:', error);
       }
     };
 
@@ -26,7 +26,7 @@ const Order = () => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `order-${orderId}.pdf`);
+      link.setAttribute('Download', `order-${orderId}.pdf`);
       document.body.appendChild(link);
       link.click();
       link.remove();
