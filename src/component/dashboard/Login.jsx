@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   const handleSubmit = () => {
-    if (inputValue === "232203") {
+    if (inputValue === "123") {
       navigate("/dash-board"); 
     } else {
       setError("Wrong password");
