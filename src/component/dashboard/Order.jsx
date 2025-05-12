@@ -8,7 +8,7 @@ const Order = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://baava-backend-new-1.onrender.com/user/order-details');
-        setOrders(response.data.reverse()); // Reverse to show latest first
+        setOrders(response.data.reverse()); 
       } catch (error) {
         console.log('Error in fetching data from the server:', error);
       }
@@ -34,7 +34,7 @@ const Order = () => {
     }
   };
 
-  // Group orders by date
+
   const groupedOrders = orders.reduce((acc, order) => {
     const date = new Date(order.createdAt).toLocaleDateString('en-IN', {
       day: '2-digit',
